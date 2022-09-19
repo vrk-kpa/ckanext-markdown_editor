@@ -1,0 +1,17 @@
+ckeditor5-markdown-js:
+  filter: rjsmin
+  output: ckanext-markdown_editor/%(version)s-ckeditor5-markdown.js
+  contents:
+    - vendor/ckeditor5-markdown-build/build/ckeditor.js
+    - vendor/ckeditor5-markdown-build/build/translations/fi.js
+    - vendor/ckeditor5-markdown-build/build/translations/sv.js
+
+markdown_editor-js:
+  filter: rjsmin
+  output: ckanext-markdown_editor/%(version)s-markdown_editor.js
+  contents:
+    - js/ckeditor5-markdown.js
+  extra:
+    preload:
+      - base/main
+      - markdown_editor/ckeditor5-markdown-js

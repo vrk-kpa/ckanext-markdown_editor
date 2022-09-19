@@ -1,0 +1,17 @@
+{% import 'macros/form.html' as form %}
+
+{% asset 'markdown_editor/markdown_editor-js' %}
+
+{% set form_attrs = {'data-module': 'ckeditor5-markdown', 'data-module-language': h.get_lang_prefix()} %}
+{% do form_attrs.update(field.form_attrs or {}) %}
+{% call form.textarea(
+  field.field_name,
+  id='field-' + field.field_name,
+  label=_(field.label),
+  placeholder=h.scheming_language_text(field.form_placeholder),
+  value=data[field.field_name],
+  error=errors[field.field_name],
+  attrs=form_attrs,
+  is_required=h.scheming_field_required(field)
+  ) %}
+{% endcall %}

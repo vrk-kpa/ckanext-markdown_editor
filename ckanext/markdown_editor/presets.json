@@ -1,0 +1,26 @@
+{
+  "scheming_presets_version": 1,
+  "about": "Markdown editor presets",
+  "about_url": "http://github.com/vrk-kpa/ckanext-markdown_editor",
+  "presets": [
+    {
+      "preset_name": "markdown_editor",
+      "values": {
+        "form_snippet": "markdown_editor.html",
+        "display_snippet": "markdown.html"
+      }
+    },
+    {
+      "preset_name": "fluent_markdown_editor",
+      "values": {
+        "form_snippet": "fluent_markdown_editor.html",
+        "display_snippet": "fluent_markdown.html",
+        "error_snippet": "fluent_text.html",
+        "validators": "fluent_text",
+        "output_validators": "fluent_core_translated_output",
+        "classes": ["control-full"]
+      }
+    }
+  ]
+}
+
